@@ -9,7 +9,7 @@ import BackgroundLayer from '@/components/layers/BackgroundLayer.vue';
 export default {
   name: 'SceneArea',
   components: {
-    BackgroundLayer
+    BackgroundLayer,
   },
 };
 </script>
