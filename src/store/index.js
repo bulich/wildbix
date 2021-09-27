@@ -1,12 +1,9 @@
 import { createStore } from 'vuex';
 
+import BackgroundLayer from './layers/background';
+
 export default createStore({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
+    bgLayer: BackgroundLayer,
   },
 });

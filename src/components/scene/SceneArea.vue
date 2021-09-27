@@ -1,10 +1,16 @@
 <template lang="pug">
-.scene-area.bg-gray-200 Edit Area
+.scene-area.bg-gray-200.relative Edit Area
+  background-layer
 </template>
 
 <script>
+import BackgroundLayer from '@/components/layers/BackgroundLayer.vue';
+
 export default {
   name: 'SceneArea',
+  components: {
+    BackgroundLayer
+  },
 };
 </script>
 
