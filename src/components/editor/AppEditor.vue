@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'EditorNav',
+  name: 'AppEditor',
 };
 </script>
 

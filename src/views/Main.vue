@@ -1,18 +1,20 @@
 <template lang="pug">
-.container-fluid
-  .row
-    .col-3
-      editor-nav
-    .col-9 2
+.flex.h-full
+  .w-60.h-full.overflow-y-auto.flex-shrink-0
+    app-editor
+  .flex-grow.h-full.bg-gray-100
+    app-scene
 </template>
 
 <script>
-import EditorNav from '@/components/editor/EditorNav.vue';
+import AppEditor from '@/components/editor/AppEditor.vue';
+import AppScene from '@/components/scene/AppScene.vue';
 
 export default {
   name: 'main',
   components: {
-    EditorNav,
+    AppEditor,
+    AppScene,
   },
 };
 </script>

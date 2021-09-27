@@ -1,4 +1,4 @@
 <template lang="pug">
-.vh-100.p-3
+.h-screen
   router-view
 </template>
