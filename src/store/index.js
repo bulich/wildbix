@@ -1,9 +1,11 @@
 import { createStore } from 'vuex';
 
-import BackgroundLayer from './layers/background';
+import background from './menu/background';
+import preset from './preset/index';
 
 export default createStore({
   modules: {
-    bgLayer: BackgroundLayer,
+    background,
+    preset,
   },
 });

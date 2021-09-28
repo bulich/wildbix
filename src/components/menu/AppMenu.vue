@@ -1,18 +1,15 @@
 <template lang="pug">
-.h-100.editor-nav
-  ul.list-group
-    li.list-group-item
-      h2 Фон
+.p-3
+  background-section
 </template>
 
 <script>
+import BackgroundSection from './background/BackgroundSection.vue';
+
 export default {
   name: 'AppEditor',
+  components: {
+    BackgroundSection,
+  },
 };
 </script>
-
-<style scoped>
-  .editor-nav {
-    overflow-y: auto;
-  }
-</style>
