@@ -18,7 +18,7 @@ export default {
     'image-file': ImageFileLInput,
   },
   methods: {
-    setBackgroundFromUrl(value) {
+    setBackground(value) {
       if (!value) return;
       this.$store.commit('setBackgroundImage', `url(${value})`);
     },
