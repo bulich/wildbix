@@ -1,6 +1,5 @@
 <template lang="pug">
-.absolute.z-0.inset-0(:style="styleObj")
-  p {{styleObj}}
+.absolute.z-1.inset-0(:style="styleObj")
 </template>
 
 <script>

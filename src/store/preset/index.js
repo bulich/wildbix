@@ -3,7 +3,8 @@ export default {
     background: {
       backgroundImage: null,
       backgroundColor: null,
-      backgroundSize: null,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center center',
     },
   }),
   getters: {
