@@ -1,7 +1,7 @@
 <template lang="pug">
 .text-xl Фон
-  image-url(label="URL изображения" @updated="setBackgroundFromUrl")
-  image-file(label="Файл изображения" @updated="setBackgroundFromUrl")
+  image-url(label="URL изображения" @updated="setBackground")
+  image-file(label="Файл изображения" @updated="setBackground")
 </template>
 
 <script>
@@ -21,9 +21,6 @@ export default {
     setBackgroundFromUrl(value) {
       if (!value) return;
       this.$store.commit('setBackgroundImage', `url(${value})`);
-    },
-    setBackgroundFromFile(value) {
-      console.log(value);
     },
   },
 };
