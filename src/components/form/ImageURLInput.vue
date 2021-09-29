@@ -2,8 +2,10 @@
 .mt-6
   label.block {{ label }}
     input.mt-3(type="text" v-model="value" :placeholder="placeholder"
-      @input="inputHandler"
+      @input="inputHandler" :class="{'border-red-600': !isValidURL}"
     )
+    span.text-red-600(v-if="!isValidURL") Неверная ссылк
+    button.block(type="button" @click="clearInput" :disabled="!value") Очистить
 </template>
 
 <script>
@@ -16,9 +18,10 @@ export default {
   data: () => ({
     value: null,
   }),
-  emits: ['updated'],
+  emits: ['updated', 'cleared'],
   computed: {
     isValidURL() {
+      if (!this.value) return true;
       let result = null;
       try {
         result = new URL(this.value).href;
@@ -35,6 +38,10 @@ export default {
       } else {
         this.$emit('updated', null);
       }
+    },
+    clearInput() {
+      this.value = null;
+      this.$emit('cleared');
     },
   },
 };

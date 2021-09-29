@@ -1,7 +1,8 @@
 <template lang="pug">
 .text-xl Фон
-  image-url(label="URL изображения" @updated="setBackground")
-  image-file(label="Файл изображения" @updated="setBackground")
+  image-url(label="URL изображения" @updated="setBackground" @cleared="removeBackground")
+  hr.mt-6
+  image-file(label="Файл изображения" @updated="setBackground" @cleared="removeBackground")
 </template>
 
 <script>
@@ -21,6 +22,9 @@ export default {
     setBackground(value) {
       if (!value) return;
       this.$store.commit('setBackgroundImage', `url(${value})`);
+    },
+    removeBackground() {
+      this.$store.commit('removeBackgroundImage');
     },
   },
 };

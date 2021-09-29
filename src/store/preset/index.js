@@ -18,6 +18,9 @@ export default {
     setBackgroundImage(state, payload) {
       state.background.backgroundImage = payload;
     },
+    removeBackgroundImage(state) {
+      state.background.backgroundImage = null;
+    },
   },
   actions: {},
 };

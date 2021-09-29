@@ -1,6 +1,6 @@
 <template lang="pug">
 .flex.h-full
-  .w-60.h-full.overflow-y-auto.flex-shrink-0
+  .w-80.h-full.overflow-y-auto.flex-shrink-0
     app-menu
   .flex-grow.h-full.bg-gray-100
     app-scene

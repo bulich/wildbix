@@ -1,9 +1,11 @@
 <template lang="pug">
 .mt-6
   label.block {{ label }}
-    input.mt-3(type="file" :placeholder="placeholder"
-      @input="inputHandler"
+    input.mt-3(type="file" :placeholder="placeholder" ref="input"
+      @input="inputHandler" :class="{'border-red-600': !isValidImage}"
     )
+    span.text-red-600(v-if="!isValidImage") Неверный файл
+    button.block(type="button" @click="clearInput" :disabled="!image") Очистить
 </template>
 
 <script>
@@ -14,24 +16,35 @@ export default {
     label: String,
   },
   data: () => ({
-    value: null,
+    image: null,
   }),
-  emits: ['updated'],
+  emits: ['updated', 'cleared'],
+  computed: {
+    isValidImage() {
+      if (this.image === null) return true;
+      console.log(this.image.type.match('image.*'));
+      return this.image.type.match('image.*');
+    },
+  },
   methods: {
     inputHandler(event) {
-      const input = event.target;
-      if (input.files && input.files[0]) {
+      this.image = event.target.files && event.target.files[0];
+      if (this.isValidImage) {
         const reader = new FileReader();
         reader.onload = (evt) => {
-          this.value = evt.target.result;
-          this.$emit('updated', this.value);
+          this.$emit('updated', evt.target.result);
         };
         reader.onerror = (evt) => {
           console.log(evt);
           this.$emit('updated', null);
         };
-        reader.readAsDataURL(input.files[0]);
+        reader.readAsDataURL(this.image);
       }
+    },
+    clearInput() {
+      this.image = null;
+      this.$refs.input.value = null;
+      this.$emit('cleared');
     },
   },
 };
