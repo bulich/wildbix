@@ -15,11 +15,8 @@ export default {
     },
   },
   mutations: {
-    setBackgroundImage(state, payload) {
-      state.background.backgroundImage = payload;
-    },
-    removeBackgroundImage(state) {
-      state.background.backgroundImage = null;
+    updateBackground(state, payload) {
+      state.background = { ...state.background, ...payload };
     },
   },
   actions: {},

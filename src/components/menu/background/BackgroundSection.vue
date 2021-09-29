@@ -1,31 +1,23 @@
 <template lang="pug">
 .text-xl Фон
-  image-url(label="URL изображения" @updated="setBackground" @cleared="removeBackground")
-  hr.mt-6
-  image-file(label="Файл изображения" @updated="setBackground" @cleared="removeBackground")
+  file-upload
+  hr.my-6
+  position-select
+  hr.my-6
+  color-select
 </template>
 
 <script>
-import ImageURLInput from '@/components/form/ImageURLInput.vue';
-import ImageFileLInput from '@/components/form/ImageFileInput.vue';
+import FileUpload from './FileUpload.vue';
+import PositionSelect from './PositionSelect.vue';
+import ColorSelect from './ColorSelect.vue';
 
 export default {
   name: 'BackgroundSection',
-  data: () => ({
-
-  }),
   components: {
-    'image-url': ImageURLInput,
-    'image-file': ImageFileLInput,
-  },
-  methods: {
-    setBackground(value) {
-      if (!value) return;
-      this.$store.commit('setBackgroundImage', `url(${value})`);
-    },
-    removeBackground() {
-      this.$store.commit('removeBackgroundImage');
-    },
+    FileUpload,
+    PositionSelect,
+    ColorSelect
   },
 };
 </script>

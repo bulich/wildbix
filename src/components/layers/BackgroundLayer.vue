@@ -7,7 +7,6 @@ export default {
   name: 'BackgroundLayer',
   computed: {
     styleObj() {
-      console.log(this.$store.getters.backgroundStyles);
       return this.$store.getters.backgroundStyles;
     },
   },

@@ -1,6 +1,7 @@
 <template lang="pug">
-.scene-area.bg-gray-200.relative Edit Area
-  background-layer
+.scene-bg.bg-white
+  .scene-area.relative(id="scene") Edit Area
+    background-layer
 </template>
 
 <script>
