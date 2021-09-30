@@ -1,6 +1,6 @@
 <template lang="pug">
 .scene-bg.bg-white
-  .scene-area.flex.justify-center.items-center.relative(id="scene")
+  .scene-area.overflow-hidden.relative(id="scene")
     background-layer
     interactive-layer(v-for="element in elements" :props="element")
 </template>

@@ -1,6 +1,6 @@
 <template lang="pug">
-drag-resize( :w="'auto'" :h="'auto'"
-  :isActive="true" v-on:resizing="resize" v-on:dragging="resize")
+drag-resize( :w="'300'" :h="'199'" :aspectRatio="true"
+  :isActive="true" v-on:resizing="resize" v-on:dragging="resize" :preventActiveBehavior="true")
   component(:is="type" :props="props")
 </template>
 

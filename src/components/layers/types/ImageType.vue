@@ -1,5 +1,5 @@
 <template lang="pug">
-img(:src="source")
+img.img(:src="source")
 </template>
 
 <script>
@@ -15,3 +15,10 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+</style>
