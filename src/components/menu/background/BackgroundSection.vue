@@ -1,12 +1,12 @@
 <template lang="pug">
 .text-xl Фон
-  file-upload
-  hr.my-6
-  position-select
-  hr.my-6
-  color-select
-  hr.my-6
-  gradient-select
+file-upload
+hr.my-6
+position-select
+hr.my-6
+color-select
+hr.my-6
+gradient-select
 </template>
 
 <script>

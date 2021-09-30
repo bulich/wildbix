@@ -5,7 +5,7 @@
       @input="inputHandler" :class="{'border-red-600': !isValidImage}"
     )
     span.text-red-600(v-if="!isValidImage") Неверный файл
-    button.block(type="button" @click="clearInput" :disabled="!image") Очистить
+    button.block(v-if="showClearBtn" type="button" @click="clearInput" :disabled="!image") Очистить
 </template>
 
 <script>
@@ -14,6 +14,10 @@ export default {
   props: {
     placeholder: String,
     label: String,
+    showClearBtn: {
+      type: Boolean,
+      default: true,
+    }
   },
   data: () => ({
     image: null,
@@ -22,7 +26,6 @@ export default {
   computed: {
     isValidImage() {
       if (this.image === null) return true;
-      console.log(this.image.type.match('image.*'));
       return this.image.type.match('image.*');
     },
   },

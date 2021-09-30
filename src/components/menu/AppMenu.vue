@@ -1,6 +1,8 @@
 <template lang="pug">
 .p-3
   background-section
+  hr.my-6
+  image-section
   button.block.mt-6.btn.bg-green-500.w-full.p-3.text-white(
     type="button" @click="saveImage"
   ) Сохранить
@@ -9,11 +11,13 @@
 <script>
 import { toPng } from 'html-to-image';
 import BackgroundSection from './background/BackgroundSection.vue';
+import ImageSection from './image/ImageSection.vue';
 
 export default {
   name: 'AppEditor',
   components: {
     BackgroundSection,
+    ImageSection
   },
   methods: {
     saveImage() {
