@@ -1,7 +1,12 @@
 <template lang="pug">
 label.block Градиент
-template(v-for="gradient in gradients")
-  input(type="radio" v-model="value" :value="gradient" @change="changeHandler")
+.flex.mt-6
+  .flex-1
+    label.block.w-8.h-8 Нет
+      input.hidden(type="radio" v-model="value" :value="null" @change="changeHandler")
+  .flex-1(v-for="gradient in gradients")
+    label.block.w-8.h-8(:style="'background:'+gradient")
+      input.hidden(type="radio" v-model="value" :value="gradient" @change="changeHandler")
 
 </template>
 
@@ -11,7 +16,7 @@ import { gradients } from '@/mocks';
 export default {
   name: 'GradientSelect',
   data: () => ({
-    value: 'none',
+    value: null,
     gradients: []
   }),
   methods: {
