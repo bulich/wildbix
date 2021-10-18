@@ -35,6 +35,7 @@ export default {
       if (this.isValidImage) {
         const reader = new FileReader();
         reader.onload = (evt) => {
+          console.log(this.image, evt.target);
           this.$emit('updated', evt.target.result);
         };
         reader.onerror = (evt) => {
